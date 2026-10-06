@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apna Food - Food Ordering App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            🍔 Apna Food
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#menu">Menu</a>
+            <a href="#" id="nav-orders">Orders</a>
+            <a href="#" id="nav-profile">Profile</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <span id="user-greeting" class="user-greeting"></span>
+
+            <button class="cart-btn" type="button">
+                🛒 Cart
+                <span id="cart-count">0</span>
+            </button>
+
+            <button id="login-btn" class="login-mini" type="button">
+                Login
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    🔥 Fast • Fresh • Delicious
+                </span>
+
+                <h1>
+                    Delicious Food,<br>
+                    Delivered To You 🍕
+                </h1>
+
+                <p>
+                    Order your favourite food from the best restaurants near you.
+                </p>
+
+                <button class="order-btn" type="button">
+                    Order Now
+                </button>
+
+            </div>
+
+            <div class="hero-visual">
+                🍕
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <section class="categories">
+
+            <h2>
+                Popular Categories
+            </h2>
+
+            <div class="category-list">
+
+                <button class="category" data-cat="pizza">
+                    🍕
+                    <p>Pizza</p>
+                </button>
+
+                <button class="category" data-cat="burger">
+                    🍔
+                    <p>Burger</p>
+                </button>
+
+                <button class="category" data-cat="noodles">
+                    🍜
+                    <p>Noodles</p>
+                </button>
+
+                <button class="category" data-cat="indian">
+                    🍛
+                    <p>Indian</p>
+                </button>
+
+                <button class="category" data-cat="snacks">
+                    🍟
+                    <p>Snacks</p>
+                </button>
+
+                <button class="category" data-cat="dessert">
+                    🍰
+                    <p>Dessert</p>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESTAURANTS ================= -->
+
+        <section class="restaurants" id="restaurants">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Popular Restaurants
+                    </h2>
+
+                    <p>
+                        Choose a restaurant and explore its menu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="restaurant-list">
+
+                <!-- Restaurant 1 -->
+
+                <div class="restaurant-card">
+
+                    <div class="restaurant-image">
+                        🍕
+                    </div>
+
+                    <div class="restaurant-info">
+
+                        <h3>
+                            Pizza House
+                        </h3>
+
+                        <p>
+                            Pizza • Italian • Fast Food
+                        </p>
+
+                        <span>
+                            ⭐ 4.5
+                        </span>
+
+                        <button
+                            class="restaurant-menu-btn"
+                            data-restaurant="Pizza House"
+                            type="button">
+
+                            View Menu
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Restaurant 2 -->
+
+                <div class="restaurant-card">
+
+                    <div class="restaurant-image">
+                        🍔
+                    </div>
+
+                    <div class="restaurant-info">
+
+                        <h3>
+                            Burger Point
+                        </h3>
+
+                        <p>
+                            Burgers • Fries • Beverages
+                        </p>
+
+                        <span>
+                            ⭐ 4.4
+                        </span>
+
+                        <button
+                            class="restaurant-menu-btn"
+                            data-restaurant="Burger Point"
+                            type="button">
+
+                            View Menu
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Restaurant 3 -->
+
+                <div class="restaurant-card">
+
+                    <div class="restaurant-image">
+                        🍛
+                    </div>
+
+                    <div class="restaurant-info">
+
+                        <h3>
+                            Apna Kitchen
+                        </h3>
+
+                        <p>
+                            Indian • Thali • North Indian
+                        </p>
+
+                        <span>
+                            ⭐ 4.6
+                        </span>
+
+                        <button
+                            class="restaurant-menu-btn"
+                            data-restaurant="Apna Kitchen"
+                            type="button">
+
+                            View Menu
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOD MENU ================= -->
+
+        <section class="food-menu" id="menu">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        🍽️ Popular Food
+                    </h2>
+
+                    <p>
+                        Choose your favourite food and add it to your cart.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Search -->
+
+            <div class="food-search-section">
+
+                <input
+                    type="text"
+                    id="food-search"
+                    placeholder="🔍 Search for food..."
+                >
+
+
+                <!-- Category -->
+
+                <select id="category-filter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="pizza">
+                        Pizza
+                    </option>
+
+                    <option value="burger">
+                        Burger
+                    </option>
+
+                    <option value="noodles">
+                        Noodles
+                    </option>
+
+                    <option value="indian">
+                        Indian
+                    </option>
+
+                    <option value="snacks">
+                        Snacks
+                    </option>
+
+                    <option value="dessert">
+                        Dessert
+                    </option>
+
+                </select>
+
+
+                <!-- Sorting -->
+
+                <select id="sort-food">
+
+                    <option value="default">
+                        Sort By
+                    </option>
+
+                    <option value="low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="high">
+                        Price: High to Low
+                    </option>
+
+                    <option value="rating">
+                        Top Rated
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Food cards generated by JavaScript -->
+
+            <div
+                class="food-grid"
+                id="food-grid">
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= OFFERS ================= -->
+
+        <section class="offers-section">
+
+            <h2>
+                🎟️ Offers & Coupons
+            </h2>
+
+            <div class="coupon-list">
+
+                <button
+                    class="coupon-card"
+                    data-coupon="WELCOME50"
+                    type="button">
+
+                    <strong>
+                        WELCOME50
+                    </strong>
+
+                    <span>
+                        ₹50 OFF on orders above ₹399
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="coupon-card"
+                    data-coupon="FOOD10"
+                    type="button">
+
+                    <strong>
+                        FOOD10
+                    </strong>
+
+                    <span>
+                        10% OFF on orders above ₹499
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="coupon-card"
+                    data-coupon="FREEDEL"
+                    type="button">
+
+                    <strong>
+                        FREEDEL
+                    </strong>
+
+                    <span>
+                        Free delivery on orders above ₹299
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>
+            🍔 Apna Food
+        </h3>
+
+        <p>
+            Fast, simple and delicious food ordering.
+        </p>
+
+        <p>
+            © 2026 Apna Food
+        </p>
+
+    </footer>
+
+
+    <!-- ================= CART OVERLAY ================= -->
+
+    <div id="cart-overlay"></div>
+
+
+    <!-- ================= CART DRAWER ================= -->
+
+    <aside id="cart-drawer">
+
+        <div class="cart-header">
+
+            <h2>
+                🛒 Your Cart
+            </h2>
+
+            <button
+                id="close-cart"
+                type="button">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <!-- Cart Items -->
+
+        <div id="cart-items">
+
+            <div class="empty-cart">
+
+                <div>
+                    🛒
+                </div>
+
+                <p>
+                    Your cart is empty
+                </p>
+
+                <small>
+                    Add some delicious food!
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cart Summary -->
+
+        <div class="cart-summary">
+
+            <div>
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="cart-subtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Delivery Fee
+                </span>
+
+                <strong id="delivery-fee">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div
+                id="discount-row"
+                class="hidden">
+
+                <span>
+                    Discount
+                </span>
+
+                <strong id="cart-discount">
+                    -₹0
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cart-total">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <!-- Coupon -->
+
+            <div class="coupon-entry">
+
+                <input
+                    type="text"
+                    id="coupon-input"
+                    placeholder="Coupon code"
+                >
+
+                <button
+                    id="apply-coupon"
+                    type="button">
+
+                    Apply
+
+                </button>
+
+            </div>
+
+            <small id="coupon-message"></small>
+
+
+            <button
+                id="checkout-btn"
+                type="button">
+
+                Proceed to Checkout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= CHECKOUT ================= -->
+
+    <section id="checkout-section">
+
+        <div class="modal-card checkout-card">
+
+            <button
+                class="modal-close"
+                id="back-to-cart"
+                type="button">
+
+                ← Back
+
+            </button>
+
+
+            <h2>
+                Checkout
+            </h2>
+
+
+            <div
+                id="checkout-summary"
+                class="mini-summary">
+
+            </div>
+
+
+            <form id="checkout-form">
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Full Name"
+                    required
+                >
+
+
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    placeholder="10 Digit Mobile Number"
+                    maxlength="10"
+                    required
+                >
+
+
+                <textarea
+                    id="customer-address"
+                    placeholder="Delivery Address"
+                    required
+                ></textarea>
+
+
+                <input
+                    type="text"
+                    id="customer-city"
+                    placeholder="City / Area"
+                    required
+                >
+
+
+                <h3>
+                    Payment Method
+                </h3>
+
+
+                <div class="payment-options">
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cod"
+                            checked
+                        >
+
+                        💵 Cash on Delivery
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="upi"
+                        >
+
+                        📱 UPI
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="card"
+                        >
+
+                        💳 Card
+
+                    </label>
+
+                </div>
+
+
+                <div
+                    id="payment-extra"
+                    class="payment-extra">
+
+                </div>
+
+
+                <button
+                    id="place-order-btn"
+                    type="submit">
+
+                    Place Order
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ORDER CONFIRMATION ================= -->
+
+    <section id="order-confirmation">
+
+        <div class="confirmation-box">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h2>
+                Order Placed Successfully!
+            </h2>
+
+
+            <p class="success-text">
+                Thank you for ordering from Apna Food.
+            </p>
+
+
+            <div class="order-details">
+
+                <p>
+                    <strong>
+                        Order ID:
+                    </strong>
+
+                    <span id="order-id"></span>
+                </p>
+
+
+                <p>
+                    <strong>
+                        Date & Time:
+                    </strong>
+
+                    <span id="order-date"></span>
+                </p>
+
+
+                <p>
+                    <strong>
+                        Total Amount:
+                    </strong>
+
+                    <span id="order-amount"></span>
+                </p>
+
+
+                <p>
+                    <strong>
+                        Status:
+                    </strong>
+
+                    <span class="order-status">
+                        Preparing
+                    </span>
+                </p>
+
+            </div>
+
+
+            <button
+                id="view-orders-btn"
+                type="button">
+
+                View My Orders
+
+            </button>
+
+
+            <button
+                id="continue-shopping-btn"
+                type="button">
+
+                Continue Shopping
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ORDER HISTORY ================= -->
+
+    <section id="order-history">
+
+        <div class="history-container">
+
+            <div class="history-header">
+
+                <button
+                    id="back-home-from-orders"
+                    type="button">
+
+                    ← Back
+
+                </button>
+
+
+                <h2>
+                    My Orders
+                </h2>
+
+            </div>
+
+
+            <div id="orders-list">
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- ================= LOGIN / REGISTER ================= -->
+
+<div
+id="auth-modal"
+class="modal-overlay">
+
+<div class="modal-card auth-card">
+
+    <button
+        class="modal-close"
+        id="close-auth"
+        type="button">
+
+        ✕
+
+    </button>
+
+
+    <div class="auth-tabs">
+
+        <button
+            id="show-login"
+            class="active"
+            type="button">
+
+            Login
+
+        </button>
+
+
+        <button
+            id="show-register"
+            type="button">
+
+            Register
+
+        </button>
+
+    </div>
+
+
+    <!-- LOGIN -->
+
+    <form id="login-form">
+
+        <h2>
+            Welcome Back 👋
+        </h2>
+
+
+        <input
+            id="login-email"
+            type="email"
+            placeholder="Email"
+            required
+        >
+
+
+        <input
+            id="login-password"
+            type="password"
+            placeholder="Password"
+            required
+        >
+
+
+        <button type="submit">
+            Login
+        </button>
+
+
+        <p class="form-note">
+            Your demo account is stored only in this browser.
+        </p>
+
+    </form>
+
+
+    <!-- REGISTER -->
+
+    <form
+        id="register-form"
+        class="hidden">
+
+        <h2>
+            Create Account
+        </h2>
+
+
+        <input
+            id="register-name"
+            type="text"
+            placeholder="Full Name"
+            required
+        >
+
+
+        <input
+            id="register-email"
+            type="email"
+            placeholder="Email"
+            required
+        >
+
+
+        <input
+            id="register-phone"
+            type="tel"
+            maxlength="10"
+            placeholder="Mobile Number"
+            required
+        >
+
+
+        <input
+            id="register-password"
+            type="password"
+            minlength="4"
+            placeholder="Password"
+            required
+        >
+
+
+        <button type="submit">
+            Create Account
+        </button>
+
+    </form>
+
+</div>
+
+</div>
+
+
+<!-- ================= PROFILE ================= -->
+
+<div
+id="profile-modal"
+class="modal-overlay">
+
+<div class="modal-card profile-card">
+
+    <button
+        class="modal-close"
+        id="close-profile"
+        type="button">
+
+        ✕
+
+    </button>
+
+
+    <h2>
+        👤 My Profile
+    </h2>
+
+
+    <div id="profile-content">
+
+    </div>
+
+
+    <button
+        id="logout-btn"
+        class="danger-btn"
+        type="button">
+
+        Logout
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast"></div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
